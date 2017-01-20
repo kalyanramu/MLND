@@ -123,7 +123,7 @@ class LearningAgent(Agent):
         stateID = self.getID(state)
         #print("state before action:", stateID)
         state_actions_init = {action: 0.0 for action in self.env.valid_actions}
-        if stateID not in self.Q.keys():
+        if stateID not in self.Q.keys() and self.learning:
             self.Q[stateID] = state_actions_init
         return
 
